@@ -27,6 +27,17 @@ terminal.resize(86, 54);
 assert.deepEqual(terminal.getDimensions(), { cols: 86, rows: 54 });
 terminal.free();
 
+// Rex VT captures can contain a populated final row. Removing the last row
+// separator would move that content up, in normal and alternate screen modes.
+for (const alternate of [false, true]) {
+  terminal = ghostty.createTerminal(80, 24);
+  terminal.write("\x1b[2J\x1b[H" + (alternate ? "\x1b[?1049h" : "") +
+    "TOP" + "\r\n".repeat(23) + "ROW_BOTTOM" + "\x1b[1;1H");
+  assert.equal(visibleLine(terminal, 23), "ROW_BOTTOM");
+  assert.equal(visibleLine(terminal, 22), "");
+  terminal.free();
+}
+
 // Replay captured Rex snapshots when the local evidence files are present.
 // These catch the original full-screen scroll and colored-text cases.
 for (const name of ["live-vt.json", "live-color-vt.json"]) {

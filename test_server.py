@@ -119,10 +119,10 @@ class AccessTests(unittest.TestCase):
 
 class TerminalTests(unittest.TestCase):
     @patch("server.rex")
-    def test_formatter_final_separator_does_not_scroll_screen(self,rex):
+    def test_formatter_row_separators_are_preserved(self,rex):
         size={"columns":80,"rows":24}
         rex.side_effect=[size,{"content":"top\r\nbottom\r\n\x1b[1;1H"},size]
-        self.assertEqual(server.terminal_snapshot(S,B)["vt"],"top\r\nbottom\x1b[1;1H")
+        self.assertEqual(server.terminal_snapshot(S,B)["vt"],"top\r\nbottom\r\n\x1b[1;1H")
 
     @patch("server.rex")
     def test_vt_snapshot_preserves_full_blob_and_size(self, rex):

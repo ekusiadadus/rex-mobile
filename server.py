@@ -107,11 +107,8 @@ def terminal_snapshot(s, b):
         after = rex("block", "call", "-s", s, "-b", b, "size", "{}")
         if (before["columns"], before["rows"]) == (after["columns"], after["rows"]):
             vt = "".join(parts)
-            # Rex's formatter terminates the final grid row with CRLF. Replaying
-            # that separator would scroll the viewport by one row before CUP.
-            final_row_separator = vt.rfind("\r\n")
-            if final_row_separator >= 0:
-                vt = vt[:final_row_separator] + vt[final_row_separator + 2:]
+            # VT is an ordered terminal program. Preserve every byte; removing
+            # a row separator moves a populated bottom row into the previous row.
             return {"vt": vt, "columns": after["columns"], "rows": after["rows"], "transport": "snapshot"}
     raise RuntimeError("terminal size changing")
 

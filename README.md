@@ -71,7 +71,7 @@ node --check static/app.js
 npm run test:terminal
 ```
 
-The current checkout has been checked in Mac Safari and through a dedicated Rex session over the HTTPS API. iPhone hardware behavior, including IME, rotation, and resume, has not been independently verified for this release.
+The current checkout has been checked in Mac Safari and through a dedicated Rex session over the HTTPS API. The owner also confirmed sending input to Claude and receiving its reply in Safari on an iPhone 15 Pro Max. That device check was user-reported; IME, rotation, and background/resume behavior still need broader testing.
 
 ## Licenses and upstream projects
 

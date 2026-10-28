@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "build:terminal": "esbuild static/terminal.js --bundle --format=iife --platform=browser --target=es2020 --outfile=static/vendor/terminal.bundle.js && cp node_modules/ghostty-web/ghostty-vt.wasm static/vendor/ghostty-vt.wasm",
+    "test:terminal": "node test_terminal.mjs"
+  },
+  "dependencies": {
+    "ghostty-web": "0.4.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

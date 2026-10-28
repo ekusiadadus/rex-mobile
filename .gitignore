@@ -1,0 +1,12 @@
+__pycache__/
+evidence/
+
+node_modules/
+
+.env
+.env.*
+!.env.example
+demo/session.json
+demo/recording-verification.txt
+*.screenstudio/
+.DS_Store

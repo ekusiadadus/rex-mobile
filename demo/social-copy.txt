@@ -1,0 +1,18 @@
+X post — ready to copy (not submitted)
+
+Hey everyone! I tried Rex and loved it, so I built an unofficial browser client while waiting for iOS. Ghostty WASM via ghostty-web renders my existing sessions, and I can run Claude through Safari + Tailscale.
+
+https://github.com/ekusiadadus/rex-mobile
+
+Discord post — ready to copy (not submitted)
+
+Hey everyone! I’ve been trying Rex and really enjoying it. I couldn’t wait for the official iOS client, so I built a small, unofficial browser client for my existing Rex sessions.
+
+It uses Ghostty compiled to WebAssembly via coder/ghostty-web to render the terminal in the browser, with access over Tailscale. I can launch Claude and interact with the same session from Safari. The demo shows Safari and Rex side by side.
+
+It’s an early personal project: VT snapshots sync about every two seconds, rather than streaming continuously. The demo is recorded on Mac Safari; iPhone IME, rotation, and resume still need device testing for this release.
+
+Source: https://github.com/ekusiadadus/rex-mobile
+Demo: https://github.com/ekusiadadus/rex-mobile/releases/tag/v0.1.0
+
+If iPhone input and replies are confirmed by the owner, replace the device-testing sentence with: “I’ve also used it from Safari on my iPhone 15 Pro Max to interact with Claude in the same Rex session. IME, rotation, and resume still need broader testing.”

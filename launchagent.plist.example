@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.personal.rex-mobile</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>REX_MOBILE_ORIGIN</key>
+    <string>REPLACE_ME_HTTPS_ORIGIN</string>
+    <key>REX_MOBILE_OWNER</key>
+    <string>REPLACE_ME_TAILSCALE_LOGIN</string>
+    <key>REX_BIN</key>
+    <string>REPLACE_ME_ABSOLUTE_REX_CLI_PATH</string>
+  </dict>
+  <key>ProgramArguments</key>
+  <array>
+    <string>REPLACE_ME_ABSOLUTE_PYTHON3_PATH</string>
+    <string>REPLACE_ME_ABSOLUTE_REPOSITORY_PATH/server.py</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>REPLACE_ME_ABSOLUTE_REPOSITORY_PATH</string>
+  <key>StandardOutPath</key>
+  <string>REPLACE_ME_ABSOLUTE_LOG_DIRECTORY/rex-mobile.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>REPLACE_ME_ABSOLUTE_LOG_DIRECTORY/rex-mobile.stderr.log</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+</dict>
+</plist>
